@@ -7,6 +7,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -18,8 +19,10 @@ func main() {
 		counts[input.Text()]++
 	}
 
-	// Примечание: игнорируются потенциальные
-	// ошибки из input.Err()
+	if input.Err() != nil {
+		log.Println(input.Err())
+	}
+
 	for line, n := range counts {
 		if n > 1 {
 			fmt.Printf("%d\t%s\n", n, line)
