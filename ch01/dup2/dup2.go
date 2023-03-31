@@ -15,9 +15,6 @@ func main() {
 	files := make([]string, len(os.Args[1:]))
 	copy(files, os.Args[1:])
 
-	// files := os.Args[1:]
-	fmt.Println(files)
-
 	if len(files) == 0 {
 		countLines(os.Stdin, counts)
 	} else {
